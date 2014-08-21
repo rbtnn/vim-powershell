@@ -9,5 +9,5 @@ setlocal commentstring=#%s
 setlocal formatoptions=tcqro
 setlocal iskeyword+=-
 
-let b:undo_ftplugin = 'setlocal tw< cms< fo< | unlet! b:browsefilter'
+let b:undo_ftplugin = 'setlocal tw< cms< fo<'
 

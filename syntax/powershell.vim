@@ -11,12 +11,11 @@ syntax sync minlines=100
 
 syntax cluster powershellNotTop contains=@powershellComment,powershellCDocParam,powershellFunction
 
-syntax keyword powershellCommentTodo TODO FIXME XXX TBD HACK NOTE contained
 syntax match powershellCDocParam /.*/ contained
 syntax match powershellCommentDoc /^\s*\zs\.\w\+\>/ nextgroup=powershellCDocParam contained
 syntax match powershellCommentDoc /#\s*\zs\.\w\+\>/ nextgroup=powershellCDocParam contained
-syntax match powershellComment /#.*/ contains=powershellCommentTodo,powershellCommentDoc,@Spell
-syntax region powershellComment start="<#" end="#>" contains=powershellCommentTodo,powershellCommentDoc,@Spell
+syntax match powershellComment /#.*/ contains=powershellCommentDoc,@Spell
+syntax region powershellComment start="<#" end="#>" contains=powershellCommentDoc,@Spell
 
 syntax keyword powershellConditional if else elseif switch default
 syntax keyword powershellRepeat while for do until break continue foreach in
@@ -109,9 +108,8 @@ highlight default link powershellScope Type
 highlight default link powershellStandaloneType Type
 highlight default link powershellNumber Number
 highlight default link powershellComment Comment
-highlight default link powershellCommentTodo Todo
 highlight default link powershellCommentDoc Tag
-highlight default link powershellCDocParam Todo
+highlight default link powershellCDocParam Comment
 highlight default link powershellOperator Operator
 highlight default link powershellRepeat Repeat
 highlight default link powershellRepeatAndCmdlet Repeat
